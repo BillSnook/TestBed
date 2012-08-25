@@ -8,12 +8,18 @@
 
 #import "tbDetailVC.h"
 
+
 @interface tbDetailVC ()
+
 @property (strong, nonatomic) UIPopoverController *masterPopoverController;
+
 - (void)configureView;
+
 @end
 
+
 @implementation tbDetailVC
+
 
 #pragma mark - Managing the detail item
 
@@ -31,6 +37,7 @@
     }        
 }
 
+
 - (void)configureView {
 
     // Update the user interface for the detail item.
@@ -40,6 +47,7 @@
 	}
 }
 
+
 - (void)viewDidLoad {
 
     [super viewDidLoad];
@@ -47,11 +55,13 @@
 	[self configureView];
 }
 
+
 - (void)viewDidUnload {
 
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 
@@ -70,6 +80,7 @@
     [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
     self.masterPopoverController = popoverController;
 }
+
 
 - (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
 

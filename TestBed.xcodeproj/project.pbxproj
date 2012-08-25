@@ -22,6 +22,7 @@
 		A9A75E4E15E9733D004BEC7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A75E2915E9733D004BEC7D /* Foundation.framework */; };
 		A9A75E5615E9733D004BEC7D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9A75E5415E9733D004BEC7D /* InfoPlist.strings */; };
 		A9A75E5915E9733D004BEC7D /* TestBedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A75E5815E9733D004BEC7D /* TestBedTests.m */; };
+		A9EE641715E98A3500D5F9DC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A9EE641615E98A3500D5F9DC /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		A9A75E5515E9733D004BEC7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A9A75E5715E9733D004BEC7D /* TestBedTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBedTests.h; sourceTree = "<group>"; };
 		A9A75E5815E9733D004BEC7D /* TestBedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBedTests.m; sourceTree = "<group>"; };
+		A9EE641615E98A3500D5F9DC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				A9A75E2D15E9733D004BEC7D /* TestBed */,
 				A9A75E5115E9733D004BEC7D /* TestBedTests */,
+				A9EE641615E98A3500D5F9DC /* README.md */,
 				A9A75E2615E9733D004BEC7D /* Frameworks */,
 				A9A75E2415E9733D004BEC7D /* Products */,
 			);
@@ -234,6 +237,7 @@
 				A9A75E3215E9733D004BEC7D /* InfoPlist.strings in Resources */,
 				A9A75E3B15E9733D004BEC7D /* MainStoryboard_iPhone.storyboard in Resources */,
 				A9A75E3E15E9733D004BEC7D /* MainStoryboard_iPad.storyboard in Resources */,
+				A9EE641715E98A3500D5F9DC /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -351,7 +355,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -372,7 +376,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -386,6 +390,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestBed/TestBed-Prefix.pch";
 				INFOPLIST_FILE = "TestBed/TestBed-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -397,6 +402,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TestBed/TestBed-Prefix.pch";
 				INFOPLIST_FILE = "TestBed/TestBed-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -455,6 +461,7 @@
 				A9A75E5E15E9733D004BEC7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A9A75E5F15E9733D004BEC7D /* Build configuration list for PBXNativeTarget "TestBedTests" */ = {
 			isa = XCConfigurationList;
@@ -463,6 +470,7 @@
 				A9A75E6115E9733D004BEC7D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

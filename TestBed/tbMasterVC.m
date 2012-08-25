@@ -7,15 +7,20 @@
 //
 
 #import "tbMasterVC.h"
-
 #import "tbDetailVC.h"
 
+
 @interface tbMasterVC () {
+	
     NSMutableArray *_objects;
+	
 }
+
 @end
 
+
 @implementation tbMasterVC
+
 
 - (void)awakeFromNib {
 	
@@ -25,6 +30,7 @@
 	}
     [super awakeFromNib];
 }
+
 
 - (void)viewDidLoad {
 	
@@ -38,11 +44,13 @@
 	self.detailViewController = (tbDetailVC *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
+
 - (void)viewDidUnload {
 
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
+
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
 
@@ -52,6 +60,7 @@
 	    return YES;
 	}
 }
+
 
 - (void)insertNewObject:(id)sender {
 	
@@ -70,10 +79,12 @@
 	return 1;
 }
 
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
 	return _objects.count;
 }
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -84,11 +95,13 @@
     return cell;
 }
 
+
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
 
     // Return NO if you do not want the specified item to be editable.
     return YES;
 }
+
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -123,6 +136,7 @@
         self.detailViewController.detailItem = object;
     }
 }
+
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
 
