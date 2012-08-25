@@ -84,7 +84,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Detail" id="26"/>
+                    <navigationItem key="navigationItem" title="Feature" id="26"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="27" id="28"/>
                     </connections>

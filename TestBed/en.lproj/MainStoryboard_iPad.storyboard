@@ -42,7 +42,7 @@
                         <simulatedOrientationMetrics key="simulatedOrientationMetrics" orientation="landscapeRight"/>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Detail" id="53"/>
+                    <navigationItem key="navigationItem" title="Feature" id="53"/>
                     <connections>
                         <outlet property="detailDescriptionLabel" destination="27" id="29"/>
                     </connections>
