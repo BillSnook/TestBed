@@ -126,6 +126,15 @@
 	}
 }
 
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	DLog( @"identifier: %@", [segue identifier] );
+	
+    if ([[segue identifier] isEqualToString:@"showDetail"]) {
+    }
+}
+
+
 #pragma mark - Split view
 
 - (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController {

@@ -8,6 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		A931756015E9EDEA004FAC95 /* DLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A931755F15E9EDEA004FAC95 /* DLog.m */; };
+		A93E113E15EA066700133100 /* itFileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E113715EA066700133100 /* itFileVC.m */; };
+		A93E113F15EA066700133100 /* itFileViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E113915EA066700133100 /* itFileViewVC.m */; };
+		A93E114015EA066700133100 /* itPDFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E113B15EA066700133100 /* itPDFVC.m */; };
+		A93E114115EA066700133100 /* itVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E113D15EA066700133100 /* itVideoVC.m */; };
+		A93E114C15EA07BD00133100 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E114715EA07BD00133100 /* QuartzCore.framework */; };
+		A93E114D15EA07BD00133100 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E114815EA07BD00133100 /* AVFoundation.framework */; };
+		A93E114E15EA07BD00133100 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E114915EA07BD00133100 /* CoreVideo.framework */; };
+		A93E114F15EA07BD00133100 /* CoreImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E114A15EA07BD00133100 /* CoreImage.framework */; };
+		A93E115015EA07BD00133100 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E114B15EA07BD00133100 /* ImageIO.framework */; };
 		A9A75E2815E9733D004BEC7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A75E2715E9733D004BEC7D /* UIKit.framework */; };
 		A9A75E2A15E9733D004BEC7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A75E2915E9733D004BEC7D /* Foundation.framework */; };
 		A9A75E2C15E9733D004BEC7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A75E2B15E9733D004BEC7D /* CoreGraphics.framework */; };
@@ -39,6 +48,19 @@
 /* Begin PBXFileReference section */
 		A931755E15E9EDEA004FAC95 /* DLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLog.h; sourceTree = "<group>"; };
 		A931755F15E9EDEA004FAC95 /* DLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLog.m; sourceTree = "<group>"; };
+		A93E113615EA066700133100 /* itFileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itFileVC.h; sourceTree = "<group>"; };
+		A93E113715EA066700133100 /* itFileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itFileVC.m; sourceTree = "<group>"; };
+		A93E113815EA066700133100 /* itFileViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itFileViewVC.h; sourceTree = "<group>"; };
+		A93E113915EA066700133100 /* itFileViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itFileViewVC.m; sourceTree = "<group>"; };
+		A93E113A15EA066700133100 /* itPDFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itPDFVC.h; sourceTree = "<group>"; };
+		A93E113B15EA066700133100 /* itPDFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itPDFVC.m; sourceTree = "<group>"; };
+		A93E113C15EA066700133100 /* itVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itVideoVC.h; sourceTree = "<group>"; };
+		A93E113D15EA066700133100 /* itVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itVideoVC.m; sourceTree = "<group>"; };
+		A93E114715EA07BD00133100 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A93E114815EA07BD00133100 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		A93E114915EA07BD00133100 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		A93E114A15EA07BD00133100 /* CoreImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreImage.framework; path = System/Library/Frameworks/CoreImage.framework; sourceTree = SDKROOT; };
+		A93E114B15EA07BD00133100 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
 		A9A75E2315E9733D004BEC7D /* TestBed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestBed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A75E2715E9733D004BEC7D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9A75E2915E9733D004BEC7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -72,6 +94,11 @@
 				A9A75E2815E9733D004BEC7D /* UIKit.framework in Frameworks */,
 				A9A75E2A15E9733D004BEC7D /* Foundation.framework in Frameworks */,
 				A9A75E2C15E9733D004BEC7D /* CoreGraphics.framework in Frameworks */,
+				A93E114C15EA07BD00133100 /* QuartzCore.framework in Frameworks */,
+				A93E114D15EA07BD00133100 /* AVFoundation.framework in Frameworks */,
+				A93E114E15EA07BD00133100 /* CoreVideo.framework in Frameworks */,
+				A93E114F15EA07BD00133100 /* CoreImage.framework in Frameworks */,
+				A93E115015EA07BD00133100 /* ImageIO.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +115,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A93E114315EA067C00133100 /* Files */ = {
+			isa = PBXGroup;
+			children = (
+				A93E113615EA066700133100 /* itFileVC.h */,
+				A93E113715EA066700133100 /* itFileVC.m */,
+				A93E113815EA066700133100 /* itFileViewVC.h */,
+				A93E113915EA066700133100 /* itFileViewVC.m */,
+			);
+			name = Files;
+			sourceTree = "<group>";
+		};
+		A93E114415EA068B00133100 /* PDFs */ = {
+			isa = PBXGroup;
+			children = (
+				A93E113A15EA066700133100 /* itPDFVC.h */,
+				A93E113B15EA066700133100 /* itPDFVC.m */,
+			);
+			name = PDFs;
+			sourceTree = "<group>";
+		};
+		A93E114515EA069800133100 /* AV */ = {
+			isa = PBXGroup;
+			children = (
+				A93E113C15EA066700133100 /* itVideoVC.h */,
+				A93E113D15EA066700133100 /* itVideoVC.m */,
+			);
+			name = AV;
+			sourceTree = "<group>";
+		};
 		A9A75E1815E9733D004BEC7D = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +171,11 @@
 				A9A75E2915E9733D004BEC7D /* Foundation.framework */,
 				A9A75E2B15E9733D004BEC7D /* CoreGraphics.framework */,
 				A9A75E4B15E9733D004BEC7D /* SenTestingKit.framework */,
+				A93E114715EA07BD00133100 /* QuartzCore.framework */,
+				A93E114815EA07BD00133100 /* AVFoundation.framework */,
+				A93E114915EA07BD00133100 /* CoreVideo.framework */,
+				A93E114A15EA07BD00133100 /* CoreImage.framework */,
+				A93E114B15EA07BD00133100 /* ImageIO.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -132,6 +193,9 @@
 				A9A75E4015E9733D004BEC7D /* tbMasterVC.m */,
 				A9A75E4215E9733D004BEC7D /* tbDetailVC.h */,
 				A9A75E4315E9733D004BEC7D /* tbDetailVC.m */,
+				A93E114315EA067C00133100 /* Files */,
+				A93E114415EA068B00133100 /* PDFs */,
+				A93E114515EA069800133100 /* AV */,
 				A9A75E2E15E9733D004BEC7D /* Supporting Files */,
 			);
 			path = TestBed;
@@ -282,6 +346,10 @@
 				A9A75E4115E9733D004BEC7D /* tbMasterVC.m in Sources */,
 				A9A75E4415E9733D004BEC7D /* tbDetailVC.m in Sources */,
 				A931756015E9EDEA004FAC95 /* DLog.m in Sources */,
+				A93E113E15EA066700133100 /* itFileVC.m in Sources */,
+				A93E113F15EA066700133100 /* itFileViewVC.m in Sources */,
+				A93E114015EA066700133100 /* itPDFVC.m in Sources */,
+				A93E114115EA066700133100 /* itVideoVC.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -9,6 +9,7 @@
 
 #import "tbMasterVC.h"
 #import "tbDetailVC.h"
+#import "itFileVC.h"
 #import "DLog.h"
 
 
@@ -30,8 +31,8 @@
 	DLog( @"" );
 	
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-	    self.clearsSelectionOnViewWillAppear = NO;
-	    self.contentSizeForViewInPopover = CGSizeMake(320.0, 400.0);
+	    self.clearsSelectionOnViewWillAppear = YES;
+	    self.contentSizeForViewInPopover = CGSizeMake(240.0, 200.0);
 	}
     [super awakeFromNib];
 }
@@ -42,11 +43,11 @@
 
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-	self.navigationItem.leftBarButtonItem = self.editButtonItem;
+//	self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
-	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
-	self.navigationItem.rightBarButtonItem = addButton;
-	self.detailViewController = (tbDetailVC *)[[self.splitViewController.viewControllers lastObject] topViewController];
+//	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
+//	self.navigationItem.rightBarButtonItem = addButton;
+//	self.detailViewController = (tbDetailVC *)[[self.splitViewController.viewControllers lastObject] topViewController];
 }
 
 
@@ -113,7 +114,7 @@
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
-
+/*
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -155,7 +156,7 @@
         // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
     }
 }
-
+*/
 /*
 // Override to support rearranging the table view.
  - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
@@ -173,17 +174,64 @@
 */
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-	DLog( @"" );
+	DLog( @"row: %d", indexPath.row );
 
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+		UIStoryboard *storyBoard = [UIStoryboard storyboardWithName: @"MainStoryboard_iPad" bundle: nil];
+		NSString *identifier;
+		switch ( indexPath.row ) {
+			case 0:
+				identifier = @"DirView";
+				break;
+				
+			case 1:
+				identifier = @"PDFView";
+				break;
+				
+			case 2:
+				identifier = @"VideoView";
+				break;
+				
+			default:
+				break;
+		}
+//		[storyBoard instantiateViewControllerWithIdentifier: identifier ];
+			
+/*
         NSDate *object = [_objects objectAtIndex:indexPath.row];
         self.detailViewController.detailItem = object;
+*/
     }
 }
 
 
+- (void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {	// Called before destination viewDidLoad
+	
+	// First, save site URL in settings in case anything changed
+	//	[self saveSettings];
+	
+	// Prepare for specific new pages to be loaded
+	if ( [segue.identifier isEqualToString: @"toDirView"] ) {	// dirView displays contents of currentDirectory
+		NLog( @"toDirView" );									// It can be sequeued to recursively
+		itFileVC *fileVC = segue.destinationViewController;
+		NSArray* docDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+		fileVC.currentDirectory = [docDirectories objectAtIndex: 0];
+		fileVC.navigationItem.title = @"Documents";
+	} else if ( [segue.identifier isEqualToString: @"toPDFView"] ) {
+		NLog( @"toPDFView" );
+	} else if ( [segue.identifier isEqualToString: @"toVideoView"] ) {
+		NLog( @"toVideoView" );
+	} else if ( [segue.identifier isEqualToString: @"showDetail"] ) {
+		NLog( @"showDetail" );
+	} else {
+		NLog( @"UNPROCESSED - %@", segue.identifier);
+	}
+	[self dismissViewControllerAnimated: YES completion: nil];
+}
+
+/*
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	DLog( @"" );
+	DLog( @"identifier: %@", [segue identifier] );
 
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
@@ -191,5 +239,6 @@
         [[segue destinationViewController] setDetailItem:object];
     }
 }
+*/
 
 @end

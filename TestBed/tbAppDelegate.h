@@ -6,10 +6,17 @@
 //  Copyright (c) 2012 SnoWare. All rights reserved.
 //
 
+
 #import <UIKit/UIKit.h>
+
 
 @interface tbAppDelegate : UIResponder <UIApplicationDelegate>
 
+
 @property (strong, nonatomic) UIWindow *window;
+
+
++ (NSString *)orientString: (UIInterfaceOrientation)interfaceOrientation;
+
 
 @end
