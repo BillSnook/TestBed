@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A931756015E9EDEA004FAC95 /* DLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A931755F15E9EDEA004FAC95 /* DLog.m */; };
 		A9A75E2815E9733D004BEC7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A75E2715E9733D004BEC7D /* UIKit.framework */; };
 		A9A75E2A15E9733D004BEC7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A75E2915E9733D004BEC7D /* Foundation.framework */; };
 		A9A75E2C15E9733D004BEC7D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A75E2B15E9733D004BEC7D /* CoreGraphics.framework */; };
@@ -36,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A931755E15E9EDEA004FAC95 /* DLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLog.h; sourceTree = "<group>"; };
+		A931755F15E9EDEA004FAC95 /* DLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLog.m; sourceTree = "<group>"; };
 		A9A75E2315E9733D004BEC7D /* TestBed.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestBed.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9A75E2715E9733D004BEC7D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		A9A75E2915E9733D004BEC7D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -121,6 +124,8 @@
 			children = (
 				A9A75E3615E9733D004BEC7D /* tbAppDelegate.h */,
 				A9A75E3715E9733D004BEC7D /* tbAppDelegate.m */,
+				A931755E15E9EDEA004FAC95 /* DLog.h */,
+				A931755F15E9EDEA004FAC95 /* DLog.m */,
 				A9A75E3915E9733D004BEC7D /* MainStoryboard_iPhone.storyboard */,
 				A9A75E3C15E9733D004BEC7D /* MainStoryboard_iPad.storyboard */,
 				A9A75E3F15E9733D004BEC7D /* tbMasterVC.h */,
@@ -276,6 +281,7 @@
 				A9A75E3815E9733D004BEC7D /* tbAppDelegate.m in Sources */,
 				A9A75E4115E9733D004BEC7D /* tbMasterVC.m in Sources */,
 				A9A75E4415E9733D004BEC7D /* tbDetailVC.m in Sources */,
+				A931756015E9EDEA004FAC95 /* DLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

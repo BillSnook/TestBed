@@ -6,13 +6,17 @@
 //  Copyright (c) 2012 SnoWare. All rights reserved.
 //
 
+
 #import "tbMasterVC.h"
 #import "tbDetailVC.h"
+#import "DLog.h"
 
 
 @interface tbMasterVC () {
 	
+	
     NSMutableArray *_objects;
+	
 	
 }
 
@@ -23,17 +27,18 @@
 
 
 - (void)awakeFromNib {
+	DLog( @"" );
 	
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
 	    self.clearsSelectionOnViewWillAppear = NO;
-	    self.contentSizeForViewInPopover = CGSizeMake(320.0, 600.0);
+	    self.contentSizeForViewInPopover = CGSizeMake(320.0, 400.0);
 	}
     [super awakeFromNib];
 }
 
 
 - (void)viewDidLoad {
-	
+	DLog( @"" );
 
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
@@ -46,13 +51,49 @@
 
 
 - (void)viewDidUnload {
+	DLog( @"" );
 
     [super viewDidUnload];
     // Release any retained subviews of the main view.
 }
 
 
+- (void)viewWillAppear:(BOOL)animated {
+	NLog( @"" );
+	
+	[super viewWillAppear: animated];
+}
+
+
+- (void)viewDidAppear:(BOOL)animated {
+	NLog( @"" );
+
+	[super viewDidAppear: animated];
+}
+
+
+- (void)viewWillDisappear:(BOOL)animated {
+	NLog( @"" );
+	
+	[super viewWillDisappear: animated];
+}
+
+
+- (void)viewDidDisappear:(BOOL)animated {
+	NLog( @"" );
+
+	[super viewDidDisappear: animated];
+}
+
+
+- (void)dealloc {
+	DLog( @"" );
+	
+}
+
+
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
+	RLog( @"" );
 
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 	    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
@@ -72,6 +113,7 @@
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
+
 #pragma mark - Table View
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
@@ -87,6 +129,7 @@
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+	DLog( @"" );
 
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
 
@@ -130,6 +173,7 @@
 */
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+	DLog( @"" );
 
     if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
         NSDate *object = [_objects objectAtIndex:indexPath.row];
@@ -139,6 +183,7 @@
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+	DLog( @"" );
 
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
