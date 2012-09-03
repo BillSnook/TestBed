@@ -24,7 +24,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-2176" y="618"/>
+            <point key="canvasLocation" x="-2203" y="703"/>
         </scene>
         <!--Split View Controller-->
         <scene sceneID="18">
@@ -122,7 +122,7 @@
                     <navigationItem key="navigationItem" title="Features" id="40"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-1675" y="617"/>
+            <point key="canvasLocation" x="-1771" y="703"/>
         </scene>
         <!--Tb VideoVC-->
         <scene sceneID="3wm-2p-pJs">
@@ -141,7 +141,7 @@
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-35" y="448"/>
+            <point key="canvasLocation" x="62" y="714"/>
         </scene>
         <!--TbPDFVC - PDF-->
         <scene sceneID="0pr-XG-Rse">
@@ -175,7 +175,7 @@
                     </connections>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-35" y="-815"/>
+            <point key="canvasLocation" x="62" y="-556"/>
         </scene>
         <!--Tb FileVC-->
         <scene sceneID="Ipa-ij-RCE">
@@ -266,7 +266,7 @@
                     <nil key="simulatedBottomBarMetrics"/>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="-1238" y="1791"/>
+            <point key="canvasLocation" x="-1021" y="1951"/>
         </scene>
         <!--Tb File ViewVC-->
         <scene sceneID="UFt-jl-rDL">
@@ -285,7 +285,7 @@
                     <splitViewDetailSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                 </viewController>
             </objects>
-            <point key="canvasLocation" x="-35" y="1791"/>
+            <point key="canvasLocation" x="62" y="1962"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="qrq-nG-2sN">
@@ -309,7 +309,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-2212" y="1791"/>
+            <point key="canvasLocation" x="-2203" y="1951"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="MVo-12-pYy">
@@ -330,7 +330,7 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-1009" y="-815"/>
+            <point key="canvasLocation" x="-1021" y="-567"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Dpl-bn-Ajf">
@@ -351,30 +351,9 @@
                     </connections>
                 </navigationController>
             </objects>
-            <point key="canvasLocation" x="-1009" y="448"/>
+            <point key="canvasLocation" x="-1021" y="703"/>
         </scene>
     </scenes>
-    <classes>
-        <class className="tbFileVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/tbFileVC.h"/>
-        </class>
-        <class className="tbFileViewVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/tbFileViewVC.h"/>
-        </class>
-        <class className="tbMasterVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/tbMasterVC.h"/>
-        </class>
-        <class className="tbPDFVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/tbPDFVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
-                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
-            </relationships>
-        </class>
-        <class className="tbVideoVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/tbVideoVC.h"/>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar" statusBarStyle="blackTranslucent"/>
         <simulatedOrientationMetrics key="orientation"/>

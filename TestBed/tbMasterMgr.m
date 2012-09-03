@@ -59,7 +59,7 @@
     UINavigationController* detailRootController = [self.detailControllers objectAtIndex: index];
     UIViewController* detailController = detailRootController.topViewController;
     
-    if ( detailController != self.currentDetailController ) {
+    if ( detailController != self.currentDetailController ) {			// If really changing detail view
         // swap button in detail controller
         [self.currentDetailController.navigationItem setLeftBarButtonItem: nil animated: NO];
         self.currentDetailController = detailController;

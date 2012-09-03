@@ -24,6 +24,9 @@
 @property (strong, nonatomic)			NSString* pdfFile;
 
 
+- (void)initializeDirectories;
+
+
 @end
 
 
@@ -50,34 +53,14 @@
 	DLog( @"" );
 	[super viewDidLoad];
 
-	// Get PDF subdirectory path including Documents folder
-	NSArray* docDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
-	NSString* documentsDirectory = [docDirectories objectAtIndex: 0];
-	self.pdfsDirectory = [[NSString alloc] initWithFormat: @"%@/%@", documentsDirectory, @"PDFs"];
-	self.pdfFile = [[NSString alloc] initWithFormat: @"%@/%@", pdfsDirectory, tmpPDFFile];
-	
-	// Verify and create PDFs subdirectory
-	NSFileManager* fileManager = [NSFileManager defaultManager];
-	NSError* err = nil;
-//	NSArray *files =
-	[fileManager contentsOfDirectoryAtPath: pdfsDirectory error: &err];
-//	DLog( @"Files: %@", [files description] );
-	if ( err != nil ) {
-		// Check for other error producing reason? Assume for now does not exist
-		[fileManager createDirectoryAtPath: pdfsDirectory withIntermediateDirectories: YES attributes: nil error: nil];
-	}
-	
-	[self exampleAnnotation2];
-	
-	NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL fileURLWithPath: pdfFile]];
-	[webView loadRequest: request];
+	[self initializeDirectories];
 	
 	DLog( @"At end." );
 }
 
 
 - (void)viewDidUnload {
-
+	
 	DLog( @"" );
 	[super viewDidUnload];
     // Release any retained subviews of the main view.
@@ -92,6 +75,11 @@
 //	[[UIApplication sharedApplication] setStatusBarHidden: NO];
 //	[self.navigationController setNavigationBarHidden: NO animated: NO];
 //	self.navigationController.navigationBar.barStyle = UIBarStyleBlack;
+
+	[self exampleAnnotation2];
+	
+	NSURLRequest *request = [NSURLRequest requestWithURL: [NSURL fileURLWithPath: pdfFile]];
+	[webView loadRequest: request];
 }
 
 - (void)viewDidAppear:(BOOL)animated {
@@ -122,6 +110,28 @@
 	    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
 	} else {
 	    return YES;
+	}
+}
+
+
+- (void)initializeDirectories {
+	DLog( @"" );
+	
+	// Get PDF subdirectory path including Documents folder
+	NSArray* docDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+	NSString* documentsDirectory = [docDirectories objectAtIndex: 0];
+	self.pdfsDirectory = [[NSString alloc] initWithFormat: @"%@/%@", documentsDirectory, @"PDFs"];
+	self.pdfFile = [[NSString alloc] initWithFormat: @"%@/%@", pdfsDirectory, tmpPDFFile];
+	
+	// Verify and create PDFs subdirectory
+	NSFileManager* fileManager = [NSFileManager defaultManager];
+	NSError* err = nil;
+	//	NSArray *files =
+	[fileManager contentsOfDirectoryAtPath: pdfsDirectory error: &err];
+	//	DLog( @"Files: %@", [files description] );
+	if ( err != nil ) {
+		// Check for other error producing reason? Assume for now does not exist
+		[fileManager createDirectoryAtPath: pdfsDirectory withIntermediateDirectories: YES attributes: nil error: nil];
 	}
 }
 

@@ -108,7 +108,8 @@
 				}
 			}
 			if ( [nonDirBook count] > 0 )
-				[fileBook addObjectsFromArray: nonDirBook];
+				[fileBook addObjectsFromArray: nonDirBook];	// Append files after directories in final list
+			[self.tableView reloadData];
 		} else {
 			DLog( @"  Empty array" );
 			self.fileBook = [NSMutableArray arrayWithObject: [NSDictionary dictionaryWithObject: @"No Entries" forKey: @"FileName"]];
