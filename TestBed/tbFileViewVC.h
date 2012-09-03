@@ -1,5 +1,5 @@
 //
-//  itFileViewVC.h
+//  tbFileViewVC.h
 //  TestBed
 //
 //  Created by Bill Snook on 8/4/12.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface itFileViewVC : UIViewController
+@interface tbFileViewVC : UIViewController
 
 
 @property (strong, nonatomic)			NSString			*filePath;

@@ -78,7 +78,7 @@
                                             <segue destination="4YT-UD-VRS" kind="push" identifier="toPDFView" id="2bZ-aC-RNc"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" textLabel="pHQ-Yr-Xe7" style="IBUITableViewCellStyleDefault" id="SGv-Uk-LrO">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="VideoCell" textLabel="pHQ-Yr-Xe7" style="IBUITableViewCellStyleDefault" id="SGv-Uk-LrO">
                                         <rect key="frame" x="0.0" y="88" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -113,11 +113,11 @@
             </objects>
             <point key="canvasLocation" x="459" y="64"/>
         </scene>
-        <!--It FileVC-->
+        <!--Tb FileVC-->
         <scene sceneID="GmN-lJ-dfi">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="umu-6U-cER" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tableViewController id="Faf-Hp-YiQ" customClass="itFileVC" sceneMemberID="viewController">
+                <tableViewController id="Faf-Hp-YiQ" customClass="tbFileVC" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="AyH-v2-9mP">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -202,11 +202,11 @@
             </objects>
             <point key="canvasLocation" x="998" y="-550"/>
         </scene>
-        <!--ItPDFVC - PDF-->
+        <!--TbPDFVC - PDF-->
         <scene sceneID="iN1-fp-x8N">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ACd-kz-bcW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="4YT-UD-VRS" customClass="itPDFVC" sceneMemberID="viewController">
+                <viewController id="4YT-UD-VRS" customClass="tbPDFVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="JTZ-6Z-NGQ">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -235,36 +235,26 @@
             </objects>
             <point key="canvasLocation" x="998" y="64"/>
         </scene>
-        <!--It VideoVC-->
+        <!--Tb VideoVC-->
         <scene sceneID="mCu-HI-hw6">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4FT-3d-9Dr" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="RG5-aq-iqt" customClass="itVideoVC" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="DnK-Ao-Qdm" customClass="UIScrollView">
+                <viewController id="RG5-aq-iqt" customClass="tbVideoVC" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="DnK-Ao-Qdm">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" id="tKx-fa-11V">
-                                <rect key="frame" x="0.0" y="10" width="320" height="320"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                            </view>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Kzm-YE-XsU"/>
-                    <connections>
-                        <outlet property="preView" destination="tKx-fa-11V" id="lAz-vL-hGy"/>
-                    </connections>
                 </viewController>
             </objects>
             <point key="canvasLocation" x="998" y="692"/>
         </scene>
-        <!--It File ViewVC-->
+        <!--Tb File ViewVC-->
         <scene sceneID="aQI-q0-CNC">
             <objects>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tBE-yg-ZzW" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <viewController id="qtE-Do-pdB" customClass="itFileViewVC" sceneMemberID="viewController">
+                <viewController id="qtE-Do-pdB" customClass="tbFileViewVC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="6C4-qe-ZTT">
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -280,27 +270,27 @@
         </scene>
     </scenes>
     <classes>
-        <class className="itFileVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/itFileVC.h"/>
+        <class className="tbFileVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/tbFileVC.h"/>
         </class>
-        <class className="itFileViewVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/itFileViewVC.h"/>
+        <class className="tbFileViewVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/tbFileViewVC.h"/>
         </class>
-        <class className="itPDFVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/itPDFVC.h"/>
+        <class className="tbMasterVC" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/tbMasterVC.h"/>
+            <relationships>
+                <relationship kind="outlet" name="splitViewController" candidateClass="UISplitViewController"/>
+            </relationships>
+        </class>
+        <class className="tbPDFVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/tbPDFVC.h"/>
             <relationships>
                 <relationship kind="outlet" name="activityIndicator" candidateClass="UIActivityIndicatorView"/>
                 <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
             </relationships>
         </class>
-        <class className="itVideoVC" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/itVideoVC.h"/>
-            <relationships>
-                <relationship kind="outlet" name="preView" candidateClass="UIView"/>
-            </relationships>
-        </class>
-        <class className="tbMasterVC" superclassName="UITableViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/tbMasterVC.h"/>
+        <class className="tbVideoVC" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/tbVideoVC.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

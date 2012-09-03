@@ -1,5 +1,5 @@
 //
-//  itVideoVC.h
+//  tbVideoVC.h
 //  TestBed
 //
 //  Created by Bill Snook on 8/11/12.
@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "tbMasterVC.h"
 
 
-@interface itVideoVC : UIViewController
+@interface tbVideoVC : UIViewController
 
 
 @end

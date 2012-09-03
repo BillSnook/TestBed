@@ -8,9 +8,21 @@
 
 
 #import "tbAppDelegate.h"
+#import "tbMasterMgr.h"
+
+
+@interface tbAppDelegate ()
+
+
+@end
+
 
 
 @implementation tbAppDelegate
+
+
+@synthesize window;
+@synthesize masterManager;
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
@@ -18,8 +30,12 @@
     // Override point for customization after application launch.
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
 	    UISplitViewController *splitViewController = (UISplitViewController *)self.window.rootViewController;
-	    UINavigationController *navigationController = [splitViewController.viewControllers lastObject];
-	    splitViewController.delegate = (id)navigationController.topViewController;
+
+		UIViewController* detail1 = [splitViewController.viewControllers objectAtIndex:1];	// Initial detail view controller
+		UIViewController* detail2 = [splitViewController.storyboard instantiateViewControllerWithIdentifier:@"PDFRoot"];
+		UIViewController* detail3 = [splitViewController.storyboard instantiateViewControllerWithIdentifier:@"VideoRoot"];
+		
+		self.masterManager = [[tbMasterMgr alloc] initWithSplitViewController: splitViewController withDetailRootControllers: [NSArray arrayWithObjects: detail1, detail2, detail3, nil]];
 	}
     return YES;
 }

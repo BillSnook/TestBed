@@ -7,7 +7,7 @@
 //
 
 
-//#define DEBUG_ROTATE
+#define DEBUG_ROTATE
 #define DEBUG_NAVIGATION
 
 

@@ -1,5 +1,5 @@
 //
-//  itFileVC.h
+//  tbFileVC.h
 //  TestBed
 //
 //  Created by Bill Snook on 8/4/12.
@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "tbMasterVC.h"
 
 
-@interface itFileVC : UITableViewController
+@interface tbFileVC : UITableViewController
 
 
 @property(strong, nonatomic)			NSString* currentDirectory;

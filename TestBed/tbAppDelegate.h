@@ -10,10 +10,16 @@
 #import <UIKit/UIKit.h>
 
 
+@class tbMasterMgr;
+
+
 @interface tbAppDelegate : UIResponder <UIApplicationDelegate>
 
 
-@property (strong, nonatomic) UIWindow *window;
+@property (strong, nonatomic)		UIWindow		*window;
+
+@property (strong,nonatomic)			tbMasterMgr		*masterManager;
+
 
 
 + (NSString *)orientString: (UIInterfaceOrientation)interfaceOrientation;

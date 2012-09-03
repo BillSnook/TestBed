@@ -1,22 +1,22 @@
 //
-//  itFileViewVC.m
+//  tbFileViewVC.m
 //  TestBed
 //
 //  Created by Bill Snook on 8/4/12.
 //  Copyright (c) 2012 SnoWare. All rights reserved.
 //
 
-#import "itFileViewVC.h"
+#import "tbFileViewVC.h"
 #import "DLog.h"
 
 
-@interface itFileViewVC ()
+@interface tbFileViewVC ()
 
 
 @end
 
 
-@implementation itFileViewVC
+@implementation tbFileViewVC
 
 
 @synthesize filePath;

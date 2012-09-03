@@ -9,14 +9,28 @@
 
 #import <UIKit/UIKit.h>
 
+/*
+//	tbSubstituteDetailVC defines the protocol that detail view controllers must adopt. The protocol specifies methods to hide and show the bar button item controlling the popover.
+@protocol tbSubstituteDetailVC
 
-@class tbDetailVC;
+
+- (void)showRootPopoverButtonItem:(UIBarButtonItem *)barButtonItem;
+
+- (void)invalidateRootPopoverButtonItem:(UIBarButtonItem *)barButtonItem;
+
+
+@end
+
+
+//--	----	----	----	----	----	----	----
+*/
 
 
 @interface tbMasterVC : UITableViewController
 
 
-@property (strong, nonatomic) tbDetailVC *detailViewController;
+//@property (nonatomic, retain)			UIPopoverController		*popoverController;
+//@property (nonatomic, retain)			UIBarButtonItem			*popoverButtonItem;
 
 
 @end

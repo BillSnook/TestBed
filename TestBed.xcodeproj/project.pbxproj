@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A930C4EC15F3F40F001976F0 /* tbMasterMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A930C4EB15F3F40F001976F0 /* tbMasterMgr.m */; };
+		A930C4F315F419D2001976F0 /* TestBed-Readme.txt in Resources */ = {isa = PBXBuildFile; fileRef = A930C4F215F419D2001976F0 /* TestBed-Readme.txt */; };
 		A931756015E9EDEA004FAC95 /* DLog.m in Sources */ = {isa = PBXBuildFile; fileRef = A931755F15E9EDEA004FAC95 /* DLog.m */; };
-		A93E113E15EA066700133100 /* itFileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E113715EA066700133100 /* itFileVC.m */; };
-		A93E113F15EA066700133100 /* itFileViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E113915EA066700133100 /* itFileViewVC.m */; };
-		A93E114015EA066700133100 /* itPDFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E113B15EA066700133100 /* itPDFVC.m */; };
-		A93E114115EA066700133100 /* itVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E113D15EA066700133100 /* itVideoVC.m */; };
+		A93E113E15EA066700133100 /* tbFileVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E113715EA066700133100 /* tbFileVC.m */; };
+		A93E113F15EA066700133100 /* tbFileViewVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E113915EA066700133100 /* tbFileViewVC.m */; };
+		A93E114015EA066700133100 /* tbPDFVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E113B15EA066700133100 /* tbPDFVC.m */; };
+		A93E114115EA066700133100 /* tbVideoVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A93E113D15EA066700133100 /* tbVideoVC.m */; };
 		A93E114C15EA07BD00133100 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E114715EA07BD00133100 /* QuartzCore.framework */; };
 		A93E114D15EA07BD00133100 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E114815EA07BD00133100 /* AVFoundation.framework */; };
 		A93E114E15EA07BD00133100 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A93E114915EA07BD00133100 /* CoreVideo.framework */; };
@@ -26,12 +28,12 @@
 		A9A75E3B15E9733D004BEC7D /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9A75E3915E9733D004BEC7D /* MainStoryboard_iPhone.storyboard */; };
 		A9A75E3E15E9733D004BEC7D /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A9A75E3C15E9733D004BEC7D /* MainStoryboard_iPad.storyboard */; };
 		A9A75E4115E9733D004BEC7D /* tbMasterVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A75E4015E9733D004BEC7D /* tbMasterVC.m */; };
-		A9A75E4415E9733D004BEC7D /* tbDetailVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A75E4315E9733D004BEC7D /* tbDetailVC.m */; };
 		A9A75E4C15E9733D004BEC7D /* SenTestingKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A75E4B15E9733D004BEC7D /* SenTestingKit.framework */; };
 		A9A75E4D15E9733D004BEC7D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A75E2715E9733D004BEC7D /* UIKit.framework */; };
 		A9A75E4E15E9733D004BEC7D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A9A75E2915E9733D004BEC7D /* Foundation.framework */; };
 		A9A75E5615E9733D004BEC7D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A9A75E5415E9733D004BEC7D /* InfoPlist.strings */; };
 		A9A75E5915E9733D004BEC7D /* TestBedTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A9A75E5815E9733D004BEC7D /* TestBedTests.m */; };
+		A9B065F715F2EDE30064BAA2 /* tbVideoMgr.m in Sources */ = {isa = PBXBuildFile; fileRef = A9B065F615F2EDE30064BAA2 /* tbVideoMgr.m */; };
 		A9EE641715E98A3500D5F9DC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = A9EE641615E98A3500D5F9DC /* README.md */; };
 /* End PBXBuildFile section */
 
@@ -46,16 +48,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A930C4EA15F3F40F001976F0 /* tbMasterMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tbMasterMgr.h; sourceTree = "<group>"; };
+		A930C4EB15F3F40F001976F0 /* tbMasterMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tbMasterMgr.m; sourceTree = "<group>"; };
+		A930C4F215F419D2001976F0 /* TestBed-Readme.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "TestBed-Readme.txt"; sourceTree = "<group>"; };
 		A931755E15E9EDEA004FAC95 /* DLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DLog.h; sourceTree = "<group>"; };
 		A931755F15E9EDEA004FAC95 /* DLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DLog.m; sourceTree = "<group>"; };
-		A93E113615EA066700133100 /* itFileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itFileVC.h; sourceTree = "<group>"; };
-		A93E113715EA066700133100 /* itFileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itFileVC.m; sourceTree = "<group>"; };
-		A93E113815EA066700133100 /* itFileViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itFileViewVC.h; sourceTree = "<group>"; };
-		A93E113915EA066700133100 /* itFileViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itFileViewVC.m; sourceTree = "<group>"; };
-		A93E113A15EA066700133100 /* itPDFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itPDFVC.h; sourceTree = "<group>"; };
-		A93E113B15EA066700133100 /* itPDFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itPDFVC.m; sourceTree = "<group>"; };
-		A93E113C15EA066700133100 /* itVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = itVideoVC.h; sourceTree = "<group>"; };
-		A93E113D15EA066700133100 /* itVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = itVideoVC.m; sourceTree = "<group>"; };
+		A93E113615EA066700133100 /* tbFileVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tbFileVC.h; sourceTree = "<group>"; };
+		A93E113715EA066700133100 /* tbFileVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tbFileVC.m; sourceTree = "<group>"; };
+		A93E113815EA066700133100 /* tbFileViewVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tbFileViewVC.h; sourceTree = "<group>"; };
+		A93E113915EA066700133100 /* tbFileViewVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tbFileViewVC.m; sourceTree = "<group>"; };
+		A93E113A15EA066700133100 /* tbPDFVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tbPDFVC.h; sourceTree = "<group>"; };
+		A93E113B15EA066700133100 /* tbPDFVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tbPDFVC.m; sourceTree = "<group>"; };
+		A93E113C15EA066700133100 /* tbVideoVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tbVideoVC.h; sourceTree = "<group>"; };
+		A93E113D15EA066700133100 /* tbVideoVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tbVideoVC.m; sourceTree = "<group>"; };
 		A93E114715EA07BD00133100 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A93E114815EA07BD00133100 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		A93E114915EA07BD00133100 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
@@ -83,6 +88,8 @@
 		A9A75E5515E9733D004BEC7D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A9A75E5715E9733D004BEC7D /* TestBedTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TestBedTests.h; sourceTree = "<group>"; };
 		A9A75E5815E9733D004BEC7D /* TestBedTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TestBedTests.m; sourceTree = "<group>"; };
+		A9B065F515F2EDE30064BAA2 /* tbVideoMgr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = tbVideoMgr.h; sourceTree = "<group>"; };
+		A9B065F615F2EDE30064BAA2 /* tbVideoMgr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = tbVideoMgr.m; sourceTree = "<group>"; };
 		A9EE641615E98A3500D5F9DC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -118,10 +125,10 @@
 		A93E114315EA067C00133100 /* Files */ = {
 			isa = PBXGroup;
 			children = (
-				A93E113615EA066700133100 /* itFileVC.h */,
-				A93E113715EA066700133100 /* itFileVC.m */,
-				A93E113815EA066700133100 /* itFileViewVC.h */,
-				A93E113915EA066700133100 /* itFileViewVC.m */,
+				A93E113615EA066700133100 /* tbFileVC.h */,
+				A93E113715EA066700133100 /* tbFileVC.m */,
+				A93E113815EA066700133100 /* tbFileViewVC.h */,
+				A93E113915EA066700133100 /* tbFileViewVC.m */,
 			);
 			name = Files;
 			sourceTree = "<group>";
@@ -129,8 +136,8 @@
 		A93E114415EA068B00133100 /* PDFs */ = {
 			isa = PBXGroup;
 			children = (
-				A93E113A15EA066700133100 /* itPDFVC.h */,
-				A93E113B15EA066700133100 /* itPDFVC.m */,
+				A93E113A15EA066700133100 /* tbPDFVC.h */,
+				A93E113B15EA066700133100 /* tbPDFVC.m */,
 			);
 			name = PDFs;
 			sourceTree = "<group>";
@@ -138,8 +145,10 @@
 		A93E114515EA069800133100 /* AV */ = {
 			isa = PBXGroup;
 			children = (
-				A93E113C15EA066700133100 /* itVideoVC.h */,
-				A93E113D15EA066700133100 /* itVideoVC.m */,
+				A93E113C15EA066700133100 /* tbVideoVC.h */,
+				A93E113D15EA066700133100 /* tbVideoVC.m */,
+				A9B065F515F2EDE30064BAA2 /* tbVideoMgr.h */,
+				A9B065F615F2EDE30064BAA2 /* tbVideoMgr.m */,
 			);
 			name = AV;
 			sourceTree = "<group>";
@@ -193,6 +202,8 @@
 				A9A75E4015E9733D004BEC7D /* tbMasterVC.m */,
 				A9A75E4215E9733D004BEC7D /* tbDetailVC.h */,
 				A9A75E4315E9733D004BEC7D /* tbDetailVC.m */,
+				A930C4EA15F3F40F001976F0 /* tbMasterMgr.h */,
+				A930C4EB15F3F40F001976F0 /* tbMasterMgr.m */,
 				A93E114315EA067C00133100 /* Files */,
 				A93E114415EA068B00133100 /* PDFs */,
 				A93E114515EA069800133100 /* AV */,
@@ -208,6 +219,7 @@
 				A9A75E3015E9733D004BEC7D /* InfoPlist.strings */,
 				A9A75E3315E9733D004BEC7D /* main.m */,
 				A9A75E3515E9733D004BEC7D /* TestBed-Prefix.pch */,
+				A930C4F215F419D2001976F0 /* TestBed-Readme.txt */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -307,6 +319,7 @@
 				A9A75E3B15E9733D004BEC7D /* MainStoryboard_iPhone.storyboard in Resources */,
 				A9A75E3E15E9733D004BEC7D /* MainStoryboard_iPad.storyboard in Resources */,
 				A9EE641715E98A3500D5F9DC /* README.md in Resources */,
+				A930C4F315F419D2001976F0 /* TestBed-Readme.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,12 +357,13 @@
 				A9A75E3415E9733D004BEC7D /* main.m in Sources */,
 				A9A75E3815E9733D004BEC7D /* tbAppDelegate.m in Sources */,
 				A9A75E4115E9733D004BEC7D /* tbMasterVC.m in Sources */,
-				A9A75E4415E9733D004BEC7D /* tbDetailVC.m in Sources */,
 				A931756015E9EDEA004FAC95 /* DLog.m in Sources */,
-				A93E113E15EA066700133100 /* itFileVC.m in Sources */,
-				A93E113F15EA066700133100 /* itFileViewVC.m in Sources */,
-				A93E114015EA066700133100 /* itPDFVC.m in Sources */,
-				A93E114115EA066700133100 /* itVideoVC.m in Sources */,
+				A93E113E15EA066700133100 /* tbFileVC.m in Sources */,
+				A93E113F15EA066700133100 /* tbFileViewVC.m in Sources */,
+				A93E114015EA066700133100 /* tbPDFVC.m in Sources */,
+				A93E114115EA066700133100 /* tbVideoVC.m in Sources */,
+				A9B065F715F2EDE30064BAA2 /* tbVideoMgr.m in Sources */,
+				A930C4EC15F3F40F001976F0 /* tbMasterMgr.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

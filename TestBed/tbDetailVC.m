@@ -8,6 +8,7 @@
 
 
 #import "tbDetailVC.h"
+#import "tbAppDelegate.h"
 #import "DLog.h"
 
 
@@ -38,9 +39,9 @@
         [self configureView];
     }
 
-//    if (self.masterPopoverController != nil) {
-        [self.masterPopoverController dismissPopoverAnimated:YES];
-//    }
+    if (self.masterPopoverController != nil)
+        [self.masterPopoverController dismissPopoverAnimated: YES];
+
 }
 
 
@@ -58,9 +59,9 @@
 - (void)awakeFromNib {
 	DLog( @"" );
 	
-	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-	    self.contentSizeForViewInPopover = CGSizeMake(320.0, 400.0);
-	}
+//	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+//	    self.contentSizeForViewInPopover = CGSizeMake(320.0, 400.0);
+//	}
     [super awakeFromNib];
 }
 
@@ -117,7 +118,7 @@
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	RLog( @"" );
+	RLog( @"to: %@", [tbAppDelegate orientString: interfaceOrientation] );
 
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 	    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
@@ -134,24 +135,5 @@
     }
 }
 
-
-#pragma mark - Split view
-
-- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)popoverController {
-	DLog( @"" );
-
-    barButtonItem.title = NSLocalizedString(@"Features", @"Master");
-    [self.navigationItem setLeftBarButtonItem:barButtonItem animated:YES];
-    self.masterPopoverController = popoverController;
-}
-
-
-- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
-	DLog( @"" );
-
-    // Called when the view is shown again in the split view, invalidating the button and popover controller.
-    [self.navigationItem setLeftBarButtonItem:nil animated:YES];
-    self.masterPopoverController = nil;
-}
 
 @end

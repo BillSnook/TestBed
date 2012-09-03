@@ -1,12 +1,12 @@
 //
-//  itPDFVC.m
+//  tbPDFVC.m
 //  TestBed
 //
 //  Created by Bill Snook on 7/29/12.
 //  Copyright (c) SnoWare All rights reserved.
 //
 
-#import "itPDFVC.h"
+#import "tbPDFVC.h"
 #import "DLog.h"
 
 
@@ -14,7 +14,7 @@
 #define testPDFFile	 @"http://samplepdf.com/sample.pdf"
 
 
-@interface itPDFVC ()
+@interface tbPDFVC ()
 
 
 //@property (strong, nonatomic) IBOutlet	UIImageView		*imgView;
@@ -27,7 +27,7 @@
 @end
 
 
-@implementation itPDFVC
+@implementation tbPDFVC
 
 
 @synthesize webView;

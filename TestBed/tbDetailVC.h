@@ -10,7 +10,7 @@
 #import <UIKit/UIKit.h>
 
 
-@interface tbDetailVC : UIViewController <UISplitViewControllerDelegate>
+@interface tbDetailVC : UIViewController
 
 
 @property (strong, nonatomic)				id			detailItem;

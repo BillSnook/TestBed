@@ -1,17 +1,17 @@
 //
-//  itFileVC.m
+//  tbFileVC.m
 //  TestBed
 //
 //  Created by Bill Snook on 8/4/12.
 //  Copyright (c) 2012 SnoWare. All rights reserved.
 //
 
-#import "itFileVC.h"
-#import "itFileViewVC.h"
+#import "tbFileVC.h"
+#import "tbFileViewVC.h"
 #import "DLog.h"
 
 
-@interface itFileVC ()
+@interface tbFileVC ()
 
 
 @property(strong, nonatomic)			NSMutableArray	*fileBook;
@@ -23,7 +23,7 @@
 @end
 
 
-@implementation itFileVC
+@implementation tbFileVC
 
 
 @synthesize fileBook;
@@ -43,6 +43,15 @@
 - (void)viewDidLoad {
 	DLog( @"Dir: %@", [currentDirectory lastPathComponent] );
     [super viewDidLoad];
+
+	if ( nil == currentDirectory ) {
+		DLog( @"No currentDirectory set" );
+		NSArray* docDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+		self.currentDirectory = [docDirectories objectAtIndex: 0];
+		self.navigationItem.title = @"Documents";
+	} else {
+		DLog( @"currentDirectory already set" );
+	}
 
 	self.fileBook = [NSMutableArray arrayWithCapacity:10];
 	
@@ -64,7 +73,7 @@
 	
  	NLog( @"" );
 	[super viewWillAppear: animated];
-	
+
 	// Walk subdirectory
 	BOOL hasDirectory = NO;
 	NSMutableArray *nonDirBook = [NSMutableArray arrayWithCapacity: 10];
@@ -153,15 +162,17 @@
 	//	[self saveSettings];
 	
 	// Prepare for specific new pages to be loaded
+	NSString *className = NSStringFromClass( [segue.destinationViewController class] );
+	DLog( @"destinationViewController class: %@", className );
 	if ( [segue.identifier isEqualToString: @"toDirView2"] ) {
 		NLog( @"toDirView2" );
-		itFileVC *dirVC = segue.destinationViewController;
+		tbFileVC *dirVC = segue.destinationViewController;
 		NSIndexPath *indexPath = [[segue.sourceViewController tableView] indexPathForCell: sender];
 		dirVC.currentDirectory = [self.currentDirectory stringByAppendingPathComponent: [[fileBook objectAtIndex: indexPath.row] objectForKey: @"FileName"]];
 		dirVC.navigationItem.title = [[fileBook objectAtIndex: indexPath.row] objectForKey: @"FileName"];
 	} else if ( [segue.identifier isEqualToString: @"toFileView2"] ) {
 		NLog( @"toFileView2" );
-		itFileViewVC *fileVC = segue.destinationViewController;
+		tbFileViewVC *fileVC = segue.destinationViewController;
 		NSIndexPath *indexPath = [[segue.sourceViewController tableView] indexPathForCell: sender];
 		fileVC.filePath = [self.currentDirectory stringByAppendingPathComponent: [[fileBook objectAtIndex: indexPath.row] objectForKey: @"FileName"]];
 		fileVC.navigationItem.title = [[fileBook objectAtIndex: indexPath.row] objectForKey: @"FileName"];
@@ -308,5 +319,6 @@
 	return UITableViewCellEditingStyleNone;
 }
 */
+
 
 @end

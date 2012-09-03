@@ -9,17 +9,19 @@
 
 #import "tbMasterVC.h"
 #import "tbDetailVC.h"
-#import "itFileVC.h"
+#import "tbAppDelegate.h"
+#import "tbFileVC.h"
+#import "tbPDFVC.h"
+#import "tbVideoVC.h"
+#import "tbMasterMgr.h"
 #import "DLog.h"
 
 
-@interface tbMasterVC () {
-	
-	
-    NSMutableArray *_objects;
-	
-	
-}
+@interface tbMasterVC ()
+
+
+@property (nonatomic, assign)			UISplitViewController	*splitViewController;
+
 
 @end
 
@@ -27,13 +29,12 @@
 @implementation tbMasterVC
 
 
+@synthesize splitViewController;
+
+
 - (void)awakeFromNib {
 	DLog( @"" );
 	
-	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-	    self.clearsSelectionOnViewWillAppear = YES;
-	    self.contentSizeForViewInPopover = CGSizeMake(240.0, 200.0);
-	}
     [super awakeFromNib];
 }
 
@@ -48,6 +49,12 @@
 //	UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
 //	self.navigationItem.rightBarButtonItem = addButton;
 //	self.detailViewController = (tbDetailVC *)[[self.splitViewController.viewControllers lastObject] topViewController];
+
+	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+		self.splitViewController = (UISplitViewController *)(self.navigationController.parentViewController);
+	    self.clearsSelectionOnViewWillAppear = YES;
+	    self.contentSizeForViewInPopover = CGSizeMake( 320.0, 320.0 );
+	}
 }
 
 
@@ -63,6 +70,8 @@
 	NLog( @"" );
 	
 	[super viewWillAppear: animated];
+
+	self.contentSizeForViewInPopover = CGSizeMake( 320.0, 320.0 );
 }
 
 
@@ -94,7 +103,7 @@
 
 
 - (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
-	RLog( @"" );
+	RLog( @"to: %@", [tbAppDelegate orientString: interfaceOrientation] );
 
 	if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone) {
 	    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
@@ -104,104 +113,48 @@
 }
 
 
-- (void)insertNewObject:(id)sender {
-	
-    if (!_objects) {
-        _objects = [[NSMutableArray alloc] init];
-    }
-    [_objects insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
-}
-
-/*
-#pragma mark - Table View
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-
-	return 1;
-}
-
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-	return _objects.count;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-	DLog( @"" );
-
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell"];
-
-	NSDate *object = [_objects objectAtIndex:indexPath.row];
-	cell.textLabel.text = [object description];
-    return cell;
-}
-
-
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
-}
-
-
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        [_objects removeObjectAtIndex:indexPath.row];
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view.
-    }
-}
-*/
-/*
-// Override to support rearranging the table view.
- - (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
-
-}
-*/
-
-/*
-// Override to support conditional rearranging of the table view.
- - (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 	DLog( @"row: %d", indexPath.row );
+	
+	[((tbAppDelegate *)([[UIApplication sharedApplication] delegate])).masterManager changeDetailsToIndex: indexPath.row];
 
-    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
-		UIStoryboard *storyBoard = [UIStoryboard storyboardWithName: @"MainStoryboard_iPad" bundle: nil];
-		NSString *identifier;
-		switch ( indexPath.row ) {
-			case 0:
-				identifier = @"DirView";
-				break;
-				
-			case 1:
-				identifier = @"PDFView";
-				break;
-				
-			case 2:
-				identifier = @"VideoView";
-				break;
-				
-			default:
-				break;
-		}
-//		[storyBoard instantiateViewControllerWithIdentifier: identifier ];
-			
 /*
-        NSDate *object = [_objects objectAtIndex:indexPath.row];
-        self.detailViewController.detailItem = object;
-*/
+    NSUInteger row = indexPath.row;
+    
+    UIViewController <tbSubstituteDetailVC> *detailViewController = nil;
+	
+    if (row == 0) {
+        tbFileVC *newDetailViewController = [[tbFileVC alloc] initWithNibName: nil bundle: nil];
+        detailViewController = newDetailViewController;
+
+		tbFileVC *fileVC = (tbFileVC *)detailViewController;
+		NSArray* docDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+		fileVC.currentDirectory = [docDirectories objectAtIndex: 0];
+		fileVC.navigationItem.title = @"Documents";
+
+} else if (row == 1) {
+        tbPDFVC *newDetailViewController = [[tbPDFVC alloc] initWithNibName: nil bundle: nil];
+        detailViewController = newDetailViewController;
+    } else if (row == 1) {
+        tbVideoVC *newDetailViewController = [[tbVideoVC alloc] initWithNibName: nil bundle: nil];
+        detailViewController = newDetailViewController;
     }
+	
+    // Update the split view controller's view controllers array.
+    NSArray *viewControllers = [[NSArray alloc] initWithObjects: self.navigationController, detailViewController, nil];
+    splitViewController.viewControllers = viewControllers;
+    
+    // Dismiss the popover if it's present.
+    if (popoverController != nil) {
+        [popoverController dismissPopoverAnimated:YES];
+    }
+	
+    // Configure the new view controller's popover button (after the view has been displayed and its toolbar/navigation bar has been created).
+    if (popoverButtonItem != nil) {
+        [detailViewController showRootPopoverButtonItem: popoverButtonItem];
+    }
+*/
 }
 
 
@@ -213,7 +166,7 @@
 	// Prepare for specific new pages to be loaded
 	if ( [segue.identifier isEqualToString: @"toDirView"] ) {	// dirView displays contents of currentDirectory
 		NLog( @"toDirView" );									// It can be sequeued to recursively
-		itFileVC *fileVC = segue.destinationViewController;
+		tbFileVC *fileVC = segue.destinationViewController;
 		NSArray* docDirectories = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
 		fileVC.currentDirectory = [docDirectories objectAtIndex: 0];
 		fileVC.navigationItem.title = @"Documents";
@@ -226,19 +179,56 @@
 	} else {
 		NLog( @"UNPROCESSED - %@", segue.identifier);
 	}
-	[self dismissViewControllerAnimated: YES completion: nil];
+//	[self dismissViewControllerAnimated: YES completion: nil];
 }
 
 /*
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-	DLog( @"identifier: %@", [segue identifier] );
+#pragma mark - Split view
 
-    if ([[segue identifier] isEqualToString:@"showDetail"]) {
-        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = [_objects objectAtIndex:indexPath.row];
-        [[segue destinationViewController] setDetailItem:object];
-    }
+- (void)splitViewController:(UISplitViewController *)splitController willHideViewController:(UIViewController *)viewController withBarButtonItem:(UIBarButtonItem *)barButtonItem forPopoverController:(UIPopoverController *)masterPopoverController {
+	DLog( @"" );
+	
+    // Keep references to the popover controller and the popover button, and tell the detail view controller to show the button.
+    barButtonItem.title = NSLocalizedString(@"Features", @"Master");
+    self.popoverController = masterPopoverController;
+    self.popoverButtonItem = barButtonItem;
+    UIViewController <tbSubstituteDetailVC> *detailViewController = [splitViewController.viewControllers objectAtIndex: 1];
+    [detailViewController showRootPopoverButtonItem: popoverButtonItem];
+
 }
+
+
+- (void)splitViewController:(UISplitViewController *)splitController willShowViewController:(UIViewController *)viewController invalidatingBarButtonItem:(UIBarButtonItem *)barButtonItem {
+	DLog( @"" );
+
+    // Nil out references to the popover controller and the popover button, and tell the detail view controller to hide the button.
+    UIViewController <tbSubstituteDetailVC> *detailViewController = [splitViewController.viewControllers objectAtIndex: 1];
+    [detailViewController invalidateRootPopoverButtonItem: popoverButtonItem];
+    self.popoverController = nil;
+    self.popoverButtonItem = nil;
+
+}
+ 
+ 
+ #pragma mark - Managing the popover
+ 
+ - (void)showRootPopoverButtonItem:(UIBarButtonItem *) barButtonItem {
+ DLog( @"" );
+ 
+ // Add the popover button to the left navigation item.
+ [self.navigationController.navigationBar.topItem setLeftBarButtonItem: barButtonItem animated: NO];
+ }
+ 
+ 
+ - (void)invalidateRootPopoverButtonItem:(UIBarButtonItem *)barButtonItem {
+ DLog( @"" );
+ 
+ // Remove the popover button.
+ [self.navigationController.navigationBar.topItem setLeftBarButtonItem: nil animated: NO];
+ }
+ 
+ 
+
 */
 
 @end
